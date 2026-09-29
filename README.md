@@ -6,6 +6,7 @@ ScopeCourt is a GenLayer Studionet project for escrowed freelance jobs. The clie
 
 - Contract source: `contracts/scopecourt.py`
 - Network target: stable Studionet, chain ID 61999
+- Hosted interface: https://scopecourt.amzar1st96.chatgpt.site (currently owner-private, writes disabled pending deployment)
 - Verified deployment: **pending**. Do not treat this repository as proof of an on-chain deployment until `deployment.json` has a finalized transaction and a matching explorer record.
 - The app intentionally disables wallet writes until `VITE_CONTRACT_ADDRESS` is set to a verified deployed address.
 

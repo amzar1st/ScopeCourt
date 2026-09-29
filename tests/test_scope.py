@@ -18,7 +18,7 @@ def warp(vm, timestamp):
 
 
 def create(vm, deploy, alice, bob):
-    contract = deploy(PATH)
+    contract = deploy(PATH, sdk_version="v0.2.12")
     vm.sender = alice
     vm.value = ESCROW
     contract.create_job("0x" + bytes(bob).hex(), "Landing page", "Responsive page with checkout", 2, 10)
@@ -141,3 +141,15 @@ def test_client_bad_evidence_cannot_force_refund(direct_vm, direct_deploy, direc
     direct_vm.mock_llm(r".*", {"verdict": "DELIVERED", "reason": "No valid counter-evidence"})
     c.adjudicate(1)
     assert job(c)["freelancer_due"] == ESCROW
+
+
+def test_refund_claim_is_single_use(direct_vm, direct_deploy, direct_alice, direct_bob):
+    c = create(direct_vm, direct_deploy, direct_alice, direct_bob)
+    warp(direct_vm, job(c)["accept_by"] + 1)
+    c.finalize(1)
+    direct_vm.sender = direct_alice
+    c.claim_refund(1)
+    assert job(c)["client_due"] == 0
+    assert c.get_total_locked() == 0
+    with direct_vm.expect_revert("nothing to claim"):
+        c.claim_refund(1)
