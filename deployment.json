@@ -1,0 +1,15 @@
+{
+  "network": "GenLayer Studio Studionet",
+  "chainId": 61999,
+  "contractAddress": "0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A",
+  "deployer": "0x875DBaAAede4595437496De5fB034Ac29a9b8C6e",
+  "transactionHash": "0x4d81dc99e4b04a2f704249f69e74c4f4caa4ffa654c6c4c906285eb87c16b2fb",
+  "explorerUrl": "https://explorer-studio.genlayer.com/address/0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A",
+  "status": "FINALIZED",
+  "genvmResult": "SUCCESS",
+  "consensusResult": "Accepted",
+  "deployedAt": "2026-09-30T05:34:29Z",
+  "initialGetCount": 0,
+  "onChainCodeSha256": "6ed958b326f12381de2b08c5f9ddd6305a0b7f2b01890b79589fe75c2ce2862b",
+  "sourceMatchesAfterTrailingNewlineNormalization": true
+}

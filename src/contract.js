@@ -3,7 +3,7 @@ import { studionet } from 'genlayer-js/chains';
 import { TransactionHashVariant } from 'genlayer-js/types';
 
 export const ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || '';
-export const EXPLORER = 'https://explorer.genlayer.com';
+export const EXPLORER = 'https://explorer-studio.genlayer.com';
 const readClient = createClient({ chain: studionet });
 let writeClient;
 let wallet;

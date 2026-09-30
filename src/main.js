@@ -1,5 +1,5 @@
 import './style.css';
-import { ADDRESS, account, connect, read, write } from './contract.js';
+import { ADDRESS, EXPLORER, account, connect, read, write } from './contract.js';
 
 const app = document.querySelector('#app');
 let jobs = [];
@@ -58,7 +58,7 @@ function render() {
   app.innerHTML = `
   <header><div class="brand"><span class="mark">SC</span><span>ScopeCourt <small>GENLAYER / STUDIONET</small></span></div><button id="wallet" class="secondary">${account() ? short(account()) : 'Connect wallet'}</button></header>
   <main>
-    <div class="top"><div><span class="eyebrow">FREELANCE ESCROW</span><h1>Work judged against the scope.</h1><p>Fund a job, share the delivery, and let GenLayer validators resolve a disputed scope.</p></div><div class="network"><span class="${ADDRESS ? 'online' : 'offline'}"></span>${ADDRESS ? `Contract ${short(ADDRESS)}` : 'Deployment pending'}<small>Finalized chain state only</small></div></div>
+    <div class="top"><div><span class="eyebrow">FREELANCE ESCROW</span><h1>Work judged against the scope.</h1><p>Fund a job, share the delivery, and let GenLayer validators resolve a disputed scope.</p></div><div class="network"><span class="${ADDRESS ? 'online' : 'offline'}"></span>${ADDRESS ? `<a href="${EXPLORER}/address/${ADDRESS}" target="_blank" rel="noopener noreferrer" title="${ADDRESS}">Contract ${short(ADDRESS)}</a>` : 'Deployment pending'}<small>Finalized chain state only</small></div></div>
     ${message ? `<div role="status" class="notice">${escape(message)} <button id="dismiss" aria-label="Dismiss">×</button></div>` : ''}
     <div class="workspace">
       <aside class="sidebar"><div class="section-title"><h2>Jobs</h2><span>${jobs.length}</span></div>

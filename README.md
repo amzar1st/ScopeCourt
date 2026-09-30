@@ -6,9 +6,10 @@ ScopeCourt is a GenLayer Studionet project for escrowed freelance jobs. The clie
 
 - Contract source: `contracts/scopecourt.py`
 - Network target: stable Studionet, chain ID 61999
-- Public interface: https://scopecourt.amzar1st96.chatgpt.site (wallet writes disabled pending deployment)
-- Verified deployment: **pending**. Do not treat this repository as proof of an on-chain deployment until `deployment.json` has a finalized transaction and a matching explorer record.
-- The app intentionally disables wallet writes until `VITE_CONTRACT_ADDRESS` is set to a verified deployed address.
+- Public interface: https://scopecourt.amzar1st96.chatgpt.site
+- Deployed contract: [`0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A`](https://explorer-studio.genlayer.com/address/0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A)
+- Deployment transaction: [`0x4d81dc99e4b04a2f704249f69e74c4f4caa4ffa654c6c4c906285eb87c16b2fb`](https://explorer-studio.genlayer.com/tx/0x4d81dc99e4b04a2f704249f69e74c4f4caa4ffa654c6c4c906285eb87c16b2fb) — FINALIZED, GenVM SUCCESS, consensus Accepted. See `deployment.json`.
+- Live finalized read: `get_count() = 0` after deployment. The deployed code matches `contracts/scopecourt.py` apart from its final newline.
 
 ## Settlement rules
 
@@ -31,7 +32,7 @@ npm ci
 npm run build
 ```
 
-After a finalized deployment, set `VITE_CONTRACT_ADDRESS=0x...` in the hosting build environment and rebuild. Run `npm run dev` for local UI development. Wallet writes use the pinned `genlayer-js@1.1.8` stable Studionet client and wait for finalization. An injected EIP-1193 wallet is required for signing.
+The verified address is set in `.env.production` for production builds. For local development, copy it to `.env` or set `VITE_CONTRACT_ADDRESS` in your environment, then run `npm run dev`. Wallet writes use the pinned `genlayer-js@1.1.8` Studionet client and wait for finalization. The website needs an injected EIP-1193 wallet; the Studio built-in wallet is used within Studio and does not automatically connect to other websites.
 
 ### Evidence format
 
@@ -39,4 +40,4 @@ Evidence must be a public HTTPS URL returning stable UTF-8 bytes of no more than
 
 ### Boundaries
 
-This is a testnet prototype. A direct-mode test does not prove validator execution, finality, real transfers, or a live user journey. The protocol does not conceal evidence. Claims emit external value transfers on finalization; an unexpected failure of a child transfer requires inspection of the transaction and chain state. Do not use for real funds.
+This is a testnet prototype. The deployment and initial finalized read are verified, but a complete live job, dispute, and transfer journey has not yet been recorded. Direct-mode tests do not prove those paths on the network. The protocol does not conceal evidence. Claims emit external value transfers; an unexpected failure requires inspection of the transaction and chain state. Do not use for real funds.
