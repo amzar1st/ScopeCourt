@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#14283d"/>
+      <stop offset="1" stop-color="#081523"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#8af0da"/>
+      <stop offset="1" stop-color="#37baa9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="216" fill="url(#bg)"/>
+  <rect x="46" y="46" width="932" height="932" rx="184" fill="none" stroke="#31546a" stroke-width="10"/>
+  <circle cx="512" cy="475" r="331" fill="#10283b" stroke="#3c8d8b" stroke-width="12"/>
+  <path d="M512 230v473M308 386h408M365 386l-78 170h156l-78-170Zm294 0-78 170h156l-78-170Z" fill="none" stroke="url(#metal)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M275 558q90 118 180 0H275Zm294 0q90 118 180 0H569Z" fill="url(#metal)"/>
+  <circle cx="512" cy="228" r="37" fill="#86ecda"/>
+  <path d="M431 705h162M389 758h246" fill="none" stroke="#82e7d6" stroke-width="33" stroke-linecap="round"/>
+  <text x="512" y="896" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="76" font-weight="700" letter-spacing="16" fill="#ccefeb">SCOPECOURT</text>
+</svg>

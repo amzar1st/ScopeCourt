@@ -5,6 +5,7 @@ ScopeCourt is a GenLayer Studionet project for escrowed freelance jobs. The clie
 ## Status
 
 - Contract source: `contracts/scopecourt.py`
+- Project submission logo: [`assets/scopecourt-logo.png`](assets/scopecourt-logo.png) (1024×1024 PNG)
 - Network target: stable Studionet, chain ID 61999
 - Public interface: https://scopecourt.amzar1st96.chatgpt.site
 - Deployed contract: [`0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A`](https://explorer-studio.genlayer.com/address/0x64BD5Fa05a21d1c68EA8F2a77c4D01bE9Fc43D3A)
